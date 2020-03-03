@@ -1,13 +1,13 @@
-﻿<html>
+<html>
 <head>
  <meta charset = "utf-8">
-<title>Login Form Validation</title>
+<title>Login Form</title>
 <!-- Include CSS File Here -->
 <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 <!-- Include JS File Here -->
 
 <!-- <script src="js/login.js"></script> -->
-
+<link rel="stylesheet" type="text/css" href="style_form.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <!-- Include JS File Here -->
 
@@ -66,128 +66,42 @@ myInput.onkeyup = function() {
   }
 }
 </script>
-
-<style>
-
-div.container{
-width: 900px;
-height: 610px;
-margin:35px auto;
-font-family: 'Raleway', sans-serif;
-}
-div.main{
-background-color:hsl(156, 40%, 95%);
-hsl(156, 100%, 95%)
-width: 500px;
-padding: 10px 50px 25px;
-border: 2px solid gray;
-border-radius: 10px;
-font-family: raleway;
-float:left;
-margin-top:50px;
-}
-input[type=text],input[type=password]{
-width: 100%;
-height: 40px;
-padding: 5px;
-margin-bottom: 25px;
-margin-top: 5px;
-border: 2px solid #ccc;
-color: #4f4f4f;
-font-size: 16px;
-border-radius: 5px;
-}
-label{
-color: #464646;
-text-shadow: 0 1px 0 #fff;
-font-size: 14px;
-font-weight: bold;
-}
-center{
-font-size:32px;
-}
-.note{
-color:red;
-}
-.valid{
-color:green;
-}
-.back{
-text-decoration: none;
-border: 1px solid hsl(156, 100%, 95%);
-background-color: hsl(156, 100%, 95%);
-padding: 3px 20px;
-border-radius: 2px;
-color: black;
-}
-input[type=button]{
-font-size: 16px;
-background: linear-gradient(hsl(156, 100%, 95%) 5%, #ffffff 100%);
-border: 1px solid #e5a900;
-color: #4E4D4B;
-font-weight: bold;
-cursor: pointer;
-width: 100%;
-border-radius: 5px;
-padding: 10px 0;
-outline:none;
-}
-input[type=button]:hover{
-background: linear-gradient(#hsl(156, 100%, 95%) 5%, #ffbc00 100%);
-}
-
-
-
-/* The message box is shown when the user clicks on the password field */
-
-#message {
-  display:none;
-  background: hsl(156, 100%, 95%);
-  color: #000;
-  position: relative;
-  
-}
-
-#message p {
-  
-  font-size: 16px;
-}
-
-
-
-
-</style>
-
 </head>
 <body>
-      <body>
-              
-<div class="topnav">
+        <div class="topnav">
            <img src="logo.png" alt="Simply Easy Learning" width="120" height="outo" align="center" >
 
-            <a href="#">دخول</a>
+            <a href="login.html">دخول</a>
             <a href="sign_up_trainess.html">تسجيل متدربين</a>
             <a href="prosend.html">تسجل مقدم ورش عمل</a>
           </div>
-<div class="container">
-<div class="main">
-<h2>ارجوك سجل دخول</h2>
+          <div class="content">       
+<span id="result"></span>
 
+<form method="post"  action="login.php" name="sform">
 
- 
-								  
-
-
-<div>
-<form id="form_id" method="post" name="myform" action="login.php">
-<p><label>أسم المستخدم: </label>
-<input type="text" name="UserName" id="UserName" required/></p>
-<p><label>كلمةالمرور : </label>
-<input type="password" name="Password" id="Password" required/></p>
-
-<p><input name="submit" type="submit" value="تسجيل دخول"/></p>
-</form>
-</div>
+  <div class="form-style-10">
+    <h1><span>تسجيل دخول</span></h1>
+    <form>
+        <div class="section"><span>1</span> أسم المستخدم وكلمة المرور</div>
+        <div class="inner-wrap">
+			<label>أسم المستخدم <input type="text" name="username" placeholder="أدخل أسم المستخدم "</label>
+			 </div>
+    
+        <div class="section"><span>2</span>رمز المرور </div>
+            <div class="inner-wrap">
+				
+            <label>رمز المرور <input type="password" name="password" placeholder="أدخل كلمة المرور"  required /></label>
+			<span id="confirm_psw"></span>
+        </div>
+        <div class="button-section">
+         <input type="submit" name="sign" />
+         <!--<span class="privacy-policy">
+         <input type="checkbox" name="field7">You agree to our Terms and Policy. 
+         </span>-->
+        </div>
+    </form>
+	</div>
 <div id="message">
   <h3>Password must contain :</h3>
   <p id="letter" class="invalid"> <b>A lowercase letter </b> </p>
@@ -199,7 +113,6 @@ background: linear-gradient(#hsl(156, 100%, 95%) 5%, #ffbc00 100%);
 
 
 
-</div>
 </div>
 </body>
 </html>
